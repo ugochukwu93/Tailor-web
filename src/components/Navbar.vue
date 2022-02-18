@@ -18,7 +18,7 @@
           <span><a href="#services">Services</a></span>
           <span @click="openLink('https://www.instagram.com/fashionafricana/')">Catalogue</span>
           <span> <a href="#contact">Contact</a></span>
-          <span @click="modal=true">Book Online</span>
+          <!-- <span @click="modal=true">Book Online</span> -->
         </div>
       </div>
   </div>
@@ -64,7 +64,7 @@ methods: {
     box-shadow: 0px 3px 6px #00000029;
     // 
     &-link {
-        padding-left: 40%;
+        padding-left: 50%;
         padding-top: 25px;
         display: flex;
         position: relative;

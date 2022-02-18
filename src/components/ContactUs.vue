@@ -9,12 +9,12 @@
               <h3>Our Office Address</h3>
               <span>No 62, Seaside Road <br> Port harcourt Rivers State</span>
           </div>
-          <div>
+          <div @click="openLink('mailto:nwadikeugochukwu93@gmail.com')" class="mail">
               <img src="../assets/img/email.png" />
               <h3>Our Office Address</h3>
               <span>contact@gmail.com</span>
           </div>
-          <div>
+          <div @click="openLink('https://wa.me/+23407062479020?text=Hi%20There!')" class="watsApp">
               <img src="../assets/img/call.png" />
               <h3>Call Us / Whats App</h3>
               <span>+234905673575</span>
@@ -30,7 +30,13 @@
 
 <script>
 export default {
-
+    methods: {
+    openLink(url) {
+      const win = window.open(url, "_blank");
+      win.focus();
+    },
+    
+}
 }
 </script>
 
@@ -44,6 +50,7 @@ h2 {
     justify-content: space-around;
     margin: 90px 0px 100px 90px;
     // justify-content: center;
+    
     img {
         width: 35px;
         margin-bottom: 30px;
@@ -57,5 +64,11 @@ h2 {
             opacity: 0.5;
         }
     }
+}
+.watsApp {
+    cursor: pointer;
+}
+.mail {
+    cursor: pointer;
 }
 </style>

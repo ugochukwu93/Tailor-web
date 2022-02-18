@@ -7,16 +7,24 @@
             </p>
         </div>
         <div>
-            <img src="../assets/img/facebook2.png"/>
+            <img 
+            src="../assets/img/facebook2.png"
+            />
         </div>
         <div>
-            <img src="../assets/img/instagram2.png"/>
+            <img 
+            src="../assets/img/instagram2.png"
+            />
         </div>
         <div>
-            <img src="../assets/img/twitter2.png"/>
+            <img 
+            src="../assets/img/twitter2.png"
+            />
         </div>
         <div>
-            <img src="../assets/img/pinterest2.png"/>
+            <img 
+            src="../assets/img/pinterest2.png"
+            />
         </div>
       </div>
   </div>

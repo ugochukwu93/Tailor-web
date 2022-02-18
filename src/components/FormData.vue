@@ -4,7 +4,7 @@
         <label :for="label">{{label}}</label>
           <input
             @blur="checkForm"
-            v-model="text"
+            v-model="aboutStyle"
             :name="label"
             class="input"
             type=""
@@ -32,6 +32,9 @@ export default {
     placeholder: {
       type: String,
     },
+    about: {
+      type: Object,
+    }
   },
   methods:{
     checkForm() {

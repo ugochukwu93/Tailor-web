@@ -4,8 +4,10 @@
           <div class="book-modal--button">
               <button>Close</button>
           </div>
-        <FormData
+          <div class="book-modal--inputbox">
+            <FormData
         v-bind="{
+            aboutStyle: about.aboutStyle,
             label: about.label,
             placeholder: about.placeholder,  
         }"
@@ -48,7 +50,7 @@
             placeholder: service.placeholder,   
         }"
         />
-        <input type="submit"/>
+        <input type="submit" @click="submitForm()"/>
         <!-- <label for="country">Type of service you want (required)</label>
         <select id="country" name="country">
             <option value="australia">Normal- 7 working days</option>
@@ -58,6 +60,7 @@
         <!-- <FormData/>
         <FormData/>
         <FormData/> -->
+          </div>
       </div>
   </div>
 </template>
@@ -154,6 +157,13 @@ export default {
                     },
                 ],  
             },
+
+            submitForm(){
+                 let url = `${"https://wa.me/+23407062479020?text="}${this.about.aboutStyle}`
+                 window.open(url, '_blank').focus();
+            
+        }
+    
             
             
         }
@@ -180,5 +190,12 @@ export default {
     // display: flex;
     // align-items: center;
     overflow: auto;
+
+    &--inputbox {
+        background: white;
+        margin: 8% 20% 5% 20%;
+        padding: 20px 0px 20px 0px;
+        border-radius: 30px;
+    }
 }
 </style>
