@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import SelectForm from './SelectForm.vue';
+
 export default {
   components: { SelectForm },
   data() {

@@ -1,10 +1,11 @@
 <template>
-<div class="container" id="services">
-    <div class="container-head">
+<div>
+<div class="contain" id="services">
+    <div class="contain-head">
         <h3>Services</h3>
     </div>
-    <div class="flex"  data-aos="fade-up" data-aos-duration="1000">
-        <div class="card"  v-for="(image,) in images" :key="image.id">
+    <div class="flex">
+        <div class="card"  v-for="(image,) in images" :key="image.id" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-img">
                 <img :src="image.img1" />
             </div>
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </template>
 
@@ -81,10 +83,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.contain {
     background: #f3e8eb75;
-    height: 1050px;
-    margin: 30% 0px 30px 0px;
+    height: 100%;
+    width: 100%;
+    margin: 10% 0% 30px 0%;
+    @media(max-width: 600px) {
+        width: 102%;
+        // margin: 10% 0% 30px 0%;
+    }
 
     &-head {
         text-align: center;
@@ -98,10 +105,20 @@ export default {
     display: flex;
     justify-content: space-around;
     margin: 50px 0px 0px 0px;
+    @media (max-width:600px) {  
+      display: block  
+    }
+
 
     .card {
-        height: 25rem;
+        height: 26rem;
         width: 20rem;
+        @media (max-width:600px) {  
+            margin-bottom: 20px;
+            margin-left: 5px;
+            width: 23.7rem; 
+            height: 27rem; 
+        }
 
         &:hover{
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -110,6 +127,10 @@ export default {
         &-img {
             img {
                 width: 20rem;
+                @media (max-width:600px) {  
+            
+            width: 23.5rem;  
+        }
             }
         }
         &-content {
@@ -134,6 +155,9 @@ export default {
     display: flex;
     justify-content: space-around;
     margin-bottom : 50px;
+    @media (max-width:600px) {  
+      display: block  
+    }
     &-card2 {
         height: 400px;
         width: 400px;
@@ -141,6 +165,12 @@ export default {
         // background-image: url("../assets/img/Polygon Luminary.svg");
         position: relative;
         background: #433E49;
+        @media (max-width:600px) {  
+            margin-bottom: 10px;
+            margin-left: 5px;
+            width: 23.7rem; 
+            height: 16rem; 
+        }
 
         &--header {
             height: 180px;
@@ -152,9 +182,21 @@ export default {
             top: 60px;
             left: 20px;
             background: #433E49;
+            @media (max-width: 600px){
+                position: absolute;
+                padding: 10px;
+                top: 30px;
+                left: 20px;
+                height: 70px;
+                font-size: 50px;
+
+            }
             h2 {
                 padding: 5px;
-                color: #ffff
+                color: #ffff;
+                @media(max-width:600px){
+                    font-size: 18px;
+                }
             }
 
         }
@@ -168,6 +210,17 @@ export default {
             top: 220px;
             left: 80px;
             background: #9284904f;
+            @media (max-width: 600px){
+                position: absolute;
+                top: 85px;
+                left: 65px;
+                width: 250px;
+                color: #ffff;
+                padding: 0px;
+                font-size: 20px;
+                height: 130px;
+
+            }
 
             p {
                 color: #ffff;

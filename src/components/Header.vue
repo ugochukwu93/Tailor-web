@@ -19,12 +19,15 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-    min-height: 700px;
+    height: 100vh;
     background: linear-gradient(to right bottom, rgba(68, 66, 66, 0.26), rgba(102, 91, 91, 0.342)), url("../assets/img/pexels-michael-burrows-7147649.jpg");
     background-size: cover;
     background-position: top;
-    margin-top: 6%;
+    margin-top: 0%;
     position: relative;
+    @media(max-width: 600px) {
+        height: 100vh;
+    }
     &-btn {
         text-align: center;
         button {
@@ -33,8 +36,13 @@ export default {
             padding: 10px 30px;
             border-radius: 50px;
             border: none;
-            background: #928490;
+            background: #e988da;
             color: #ffff;
+            @media(max-width: 600px) {
+                margin: 790px 230px 0px 0px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
 
             &:hover {
                 transform: translateY(-3px)
@@ -43,10 +51,10 @@ export default {
     }
     &-text {
         position: absolute;
-        top: 250px;
+        top: 400px;
         left: 200px;
         color:#ffff;
-        font-size: 40px;
+        font-size: 70px;
         width: 30em;
         white-space: nowrap;/*Evitar saltos de línea*/
         overflow: hidden;
@@ -54,10 +62,22 @@ export default {
         @keyframes keyframes{ 
             from{ width: 0px;} 
         } 
+        @media(max-width: 600px) {
+            position: absolute;
+            top: 450px;
+            left: 50px;
+            width: 8em;
+            font-size: 40px;
+        }
 
         span {
             color: #F3E8EB;
             font-weight: 50;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        body {
+            // background-color: lightblue;
         }
     }
 }

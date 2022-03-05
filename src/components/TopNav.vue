@@ -1,10 +1,10 @@
 <template>
   <div>
-      <div class="topNav">
+      <!-- <div class="topNav">
           <img src="../assets/img/facebook.png" />
           <img src="" />
           <img src="" />
-      </div>
+      </div> -->
   </div>
 </template>
 

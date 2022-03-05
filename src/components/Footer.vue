@@ -3,7 +3,7 @@
       <div class="footer">
         <div>
             <p class="">
-                © Copyrights All Rights Reserved. {{new Date().getFullYear()}}
+                © Ugochukwu. {{new Date().getFullYear()}}
             </p>
         </div>
         <div>
@@ -42,9 +42,14 @@ export default {
     background: #4C4556;
     padding: 25px;
     width: 100%;
+    @media(max-width: 600px) {
+        width: 100%;
+        padding: 10px;
+        height: 50px;
+    }
 
     div {
-        margin-right: 30px;
+        margin-right: 20px;
 
         img {
             cursor: pointer;

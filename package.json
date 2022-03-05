@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "heroku-postbuild": "npm run build",
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-    
+    "build": "vue-cli-service build",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "aos": "^2.3.4",

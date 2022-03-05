@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="pricing">
       <div class="container">
           <div class="container-head">
@@ -54,6 +55,7 @@
 	</table>
 </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -65,6 +67,13 @@ export default {
 <style lang="scss" scoped>
 .container {
 	margin: 30px 30px 30px 120px;
+	@media(max-width: 600px) {
+		// overflow: auto;
+		margin: 0px;
+		 width: 100%;
+		 padding: 0px;
+	}
+	
 
     &-head {
         text-align: center;
@@ -80,6 +89,11 @@ table {
 	border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	@media(max-width: 600px) {
+
+		width: 100%;
+		margin-left: 0px;
+	}
 }
 
 th,
@@ -87,6 +101,9 @@ td {
 	padding: 15px;
 	background-color: rgba(255,255,255,0.2);
 	color: #4C4556;
+	@media(max-width: 600px) {
+		padding: 15px;
+	}
 }
 
 th {

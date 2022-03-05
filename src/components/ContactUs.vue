@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="contact">
       <div>
           <h2>Contact Us</h2>
@@ -26,6 +27,7 @@
           </div>
       </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -44,21 +46,35 @@ export default {
 h2 {
     text-align: center;
     margin-top: 50px;
+    @media(max-width: 600px) {
+        margin-top: 30px;
+    }
 }
 .contact {
     display: flex;
     justify-content: space-around;
     margin: 90px 0px 100px 90px;
     // justify-content: center;
+    @media(max-width: 600px) {
+        display: block;
+        margin: 40px 0px 50px 90px;
+    }
     
     img {
         width: 35px;
         margin-bottom: 30px;
+        @media(max-width: 600px) {
+             margin-bottom: 10px;
+        }
     }
     div {
         text-align: center;
         padding: 40px 100px 40px 40px;
         border-right: 2px solid rgb(236, 233, 233);
+        @media(max-width: 600px) {
+            border-right: none;
+            padding: 5px 120px 10px 40px;
+        }
 
         span {
             opacity: 0.5;

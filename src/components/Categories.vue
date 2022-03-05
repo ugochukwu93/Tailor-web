@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="categories">
     <div>
       <div class="categories" >
@@ -13,6 +14,7 @@
         <div class="item item--6"  data-aos="fade-up" data-aos-duration="1000"><img src="../assets/img/618253-removebg-preview.png"/><div><h3>Office Gown</h3></div></div>
     </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -43,6 +45,16 @@ export default {
   //grid-row-gap: 30px;
   //grid-column-gap: 30px; 
   grid-gap: 100px; //combines previous two lines if same
+
+   @media (max-width:600px) {  
+      width: 368px; 
+      margin-bottom:20px ; 
+      display: block;
+      padding-right: 0px;
+      padding-left: 0px;
+       margin: 10px 0px 10px 10px;
+         
+  }
 }
 
 .item {
@@ -80,6 +92,9 @@ export default {
     grid-column: 2 / 3;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;   
+    }
 
     img {
         position: absolute;
@@ -100,6 +115,10 @@ export default {
     grid-column: 1 / 2; //spans from 2 to end
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;   
+    }
+    
     img {
         position: absolute;
         right: 0px;
@@ -118,6 +137,9 @@ export default {
     grid-column: 1 / 2;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;   
+    }
 
     img {
         position: absolute;
@@ -137,6 +159,9 @@ export default {
     background-color: #F3E8EB;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;   
+    }
 
     img {
         position: absolute;
@@ -158,6 +183,9 @@ export default {
     grid-area: 1 / 3 / 2 / 4; // r-start c-s r-end c-e
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;   
+    }
 
     img {
         position: absolute;
@@ -179,6 +207,9 @@ export default {
     grid-column: 2 / 3;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    @media (max-width:600px) {  
+      margin-bottom: 20px;  
+    }
 
     img {
         position: absolute;

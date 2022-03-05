@@ -1,4 +1,5 @@
 <template>
+<div>
 <div id="home">
   <Navbar/>
   <Header/>
@@ -8,6 +9,7 @@
   <Pricing/>
   <ContactUs/>
   <Footer/>
+</div>
 </div>
 </template>
 

@@ -1,172 +1,169 @@
 <template>
   <div>
       <div class="book-modal">
-          <div class="book-modal--button">
-              <button>Close</button>
-          </div>
-          <div class="book-modal--inputbox">
-            <FormData
-        v-bind="{
-            aboutStyle: about.aboutStyle,
-            label: about.label,
-            placeholder: about.placeholder,  
-        }"
-        />
-        <select-form
-        v-bind="{
-            services: services.options,
-            label: services.label,
-            placeholder: services.placeholder, 
-             
-        }"
-        />
-        <select-form
-        v-bind="{
-            services: services2.options,
-            label: services2.label,
-            placeholder: services2.placeholder, 
-             
-        }"
-        />
-        <select-form
-        v-bind="{
-            services: services3.options,
-            label: services3.label,
-            placeholder: services3.placeholder, 
-             
-        }"
-        />
-        <select-form
-        v-bind="{
-            services: services4.options,
-            label: services4.label,
-            placeholder: services4.placeholder, 
-             
-        }"
-        />
-        <FormData
-        v-bind="{
-            label: service.label,
-            placeholder: service.placeholder,   
-        }"
-        />
-        <input type="submit" @click="submitForm()"/>
-        <!-- <label for="country">Type of service you want (required)</label>
-        <select id="country" name="country">
-            <option value="australia">Normal- 7 working days</option>
-            <option value="canada">Express - 3 days(+N3000</option>
-            <option value="usa">Magic - 24 hours (+N5000</option>
-        </select> -->
-        <!-- <FormData/>
-        <FormData/>
-        <FormData/> -->
-          </div>
+        <div class="book-modal--button">
+            <button @click="close">Close</button>
+        </div>
+        <form @submit="submitForm" class="book-modal--form">
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">Full name</label>
+                <input type="text" v-model="name" class="form-control  form-control w-75" required/>
+                <!-- <div class="invalid-feedback">text required</div> -->
+            </div>
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">Phone number</label>
+                <input type="number" v-model="number" class="form-control  form-control w-75" required/>
+                <div class="invalid-feedback">text required</div>
+            </div>
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">Tell us about the style you want</label>
+                <input type="text" v-model="styleType" class="form-control  form-control w-75" required/>
+                <div class="invalid-feedback">text required</div>
+            </div>
+            
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">Type of service</label>
+                <select v-model="selected" class="form-select  form-select w-75" aria-label="Default select example" required>
+                    <!-- <option value="" disabled selected hidden>select type of service</option> -->
+                    <option  v-for="service in services">{{service.title}}</option>
+                </select>
+            </div>
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">How do we get your measurement (required)</label>
+                <select v-model="selected2" class="form-select  form-select w-75" aria-label="Default select example" required>
+                    <!-- <option value="" disabled selected hidden>select how we get your measurement</option> -->
+                    <option selected v-for="service2 in services2">{{service2.title}}</option>
+                </select>
+            </div>
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">How do we get your fabric (required)</label>
+                <select v-model="selected3" class="form-select  form-select w-75" aria-label="Default select example" required>
+                    <option selected v-for="service3 in services3">{{service3.title}}</option>
+                </select>
+            </div>
+            <div class="col-12 form-group input">
+                <label class="col-form-label col-form-label">How do you want to get your stuff when we finish (required)</label>
+                <select v-model="selected4" class="form-select  form-select w-75" aria-label="Default select example" required>
+                    <option selected v-for="service4 in services4">{{service4.title}}</option>
+                </select>
+            </div>
+            <div class="input">
+                <button>Submit</button>
+            </div>
+        </form>   
       </div>
   </div>
 </template>
 
+
 <script>
-import FormData from './FormData.vue'
-import SelectForm from './SelectForm.vue'
+
+
 export default {
     components: {
-        FormData,
-        SelectForm,
+       
+    },
+    props: {
+        modal: Boolean
     },
     data() {
-        return {
-            about: {
-                aboutStyle: "",
-                label: "Tell us about the style you want",
-                placeholder: "About you.."
-            },
-            service: {
-                typeOfService: "",
-                label: "Type of service",
-                placeholder: "Sevices",
-            },
-            services: {
-                label: 'Type of service',
-                placeholder: "Sevices",
-                options:[
-                    {
-                    id:1,
-                    title: 'Normal -7 working days', 
-                    },
-                    {
-                    id: 2,
-                    title: 'Express -3 days (+N3000)',
-                    },
-                    {
-                    id: 3,
-                    title: 'Magic -@$ hours (+N5000)',
-                    },    
+        return{
+            name: "",
+            number: "",
+            styleType: "",
+            typeOfService: "",
+            getMeasurement: "",
+            getFabric: "",
+            deliveryMethod: "",
+            selected: "",
+            selected2: "",
+            selected3: "",
+            selected4: "",
+            services:[
+                {
+                id:1,
+                title: 'Normal -7 working days', 
+                },
+                {
+                id: 2,
+                title: 'Express -3 days (+N3000)',
+                },
+                {
+                id: 3,
+                title: 'Magic -24 hours (+N5000)',
+                },    
                     
-                ],  
-            },
-            services2: {
-                label: 'How do we get your measurement (required)',
-                placeholder: "",
-                options:[
-                    {
-                    id:1,
-                    title: 'We should come over (free)', 
-                    },
-                    {
-                    id: 2,
-                    title: 'You will send it',
-                    },
-                    {
-                    id: 3,
-                    title: 'I trust US/UK sizes',
-                    },    
+            ],  
+            services2: [               
+                {
+                id:1,
+                title: 'We should come over (free)', 
+                },
+                {
+                id: 2,
+                title: 'You will send it',
+                },
+                {
+                id: 3,
+                title: 'I trust US/UK sizes',
+                },    
                     
-                ],  
-            },
-            
-            services3: {
-                label: 'How do we get your fabric (required)',
-                placeholder: "",
-                options:[
-                    {
-                    id:1,
-                    title: 'We should come over (free)', 
-                    },
-                    {
-                    id: 2,
-                    title: 'You will send it',
-                    },
-                    {
-                    id: 3,
-                    title: 'We should buy for you',
-                    },    
-                    
-                ],  
-            },
-            services4: {
-                label: 'How do you want to get your stuff when we finish (required)',
-                placeholder: "",
-                options:[
-                    {
-                    id:1,
-                    title: 'We should deliver (+N1000)', 
-                    },
-                    {
-                    id: 2,
-                    title: 'You will come and get it',
-                    },
-                ],  
-            },
-
-            submitForm(){
-                 let url = `${"https://wa.me/+23407062479020?text="}${this.about.aboutStyle}`
-                 window.open(url, '_blank').focus();
-            
+            ],  
+            services3:[
+                {
+                id:1,
+                title: 'We should come get it (free)', 
+                },
+                {
+                id: 2,
+                title: 'You will send it',
+                },
+                {
+                id: 3,
+                title: 'We should buy for you',
+                },     
+            ],  
+            services4:[
+                {
+                id:1,
+                title: 'We should deliver (+N1000)', 
+                },
+                {
+                id: 2,
+                title: 'You will come and get it (free)',
+                },
+            ],  
         }
+    },
     
-            
-            
-        }
+    
+    methods: {
+        submitForm(){
+            let url = `${"https://wa.me/+23407062479020?text="}NAME : 
+            ${this.name},PHONE NUMBER :
+            ${this.number},STYLE TYPE : 
+            ${this.styleType}, TYPE OF SERVICE : 
+            ${this.selected}, HOW YOU GET MEASUREMENT : 
+            ${this.selected2}, HOW YOU GET FABRICS : 
+            ${this.selected3},  HOW I GET FABRIC AFTER IS DONE : 
+            ${this.selected4}`
+
+            window.open(url, '_blank').focus();
+            this.name = "",
+            this.number = "",
+            this.styleType = "",
+            this.selected = ""
+            this.selected2 = ""
+            this.selected3 = ""
+            this.selected4 = ""
+        },
+        closeModal() {
+            this.modal = false
+        },
+        
+        close(event) {
+        this.$emit('close');
+        },
     }
 
 }
@@ -187,15 +184,48 @@ export default {
       
     );
     z-index: 10000;
-    // display: flex;
-    // align-items: center;
     overflow: auto;
+    @media(max-width: 600px) {
+        width:100vw
+    }
+    &--button{
+        margin: 2px 0px 0px 1400px;
+        @media(max-width: 600px) {
+            margin: 2px 0px 10px 140px;
+        }
+    }
 
-    &--inputbox {
-        background: white;
-        margin: 8% 20% 5% 20%;
-        padding: 20px 0px 20px 0px;
-        border-radius: 30px;
+    &--form {
+        background-color: #e9b3c175;
+        border-radius: 10px;
+        margin: 1px 20%;
+        padding: 30px;
+        @media(max-width: 600px) {
+            margin: 10px ;
+            padding: 5px;
+        }
+    }
+}
+.input {
+    margin: 0% 12%;
+    
+}
+button {
+    margin-top: 30px;
+    padding: 7px 25px;
+    border-radius: 3px;
+    border: none;
+    background: #433E49;
+    color: #ffff;
+    @media(max-width: 600px) {
+         padding: 5px 15px;
+         margin-top: 15px;
+         margin-bottom: 15px;
+    }
+}
+label {
+    @media(max-width: 600px) {
+        width: 275px;
     }
 }
 </style>
