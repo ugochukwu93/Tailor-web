@@ -5,7 +5,7 @@
             <h2>We Stitch Designs<br> <span>That Fits You Perfectly...</span></h2>
           </div>
           <div class="header-btn">
-              <button>Catalogue</button>
+              <button @click="openLink('https://www.instagram.com/tailorcatalogue/')">Catalogue</button>
           </div>
       </div>
   </div>
@@ -13,6 +13,12 @@
 
 <script>
 export default {
+    methods: {
+        openLink(url) {
+              const win = window.open(url, "_blank");
+              win.focus();
+    },
+    }
 
 }
 </script>
@@ -36,8 +42,8 @@ export default {
             padding: 10px 30px;
             border-radius: 50px;
             border: none;
-            background: #e988da;
-            color: #ffff;
+            background: #F3E8EB;
+            color: #433E49;
             @media(max-width: 600px) {
                 margin: 790px 230px 0px 0px;
                 border-radius: 5px;
@@ -55,7 +61,7 @@ export default {
         left: 200px;
         color:#ffff;
         font-size: 70px;
-        width: 30em;
+        width: 7em;
         white-space: nowrap;/*Evitar saltos de línea*/
         overflow: hidden;
         animation: keyframes 10s steps(500) infinite; 

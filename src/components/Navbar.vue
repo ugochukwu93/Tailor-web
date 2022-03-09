@@ -88,6 +88,10 @@ mounted() {
     window.addEventListener('scroll', this.onScroll)
 },
 methods: {
+    openLink(url) {
+      const win = window.open(url, "_blank");
+      win.focus();
+    },
     showModal() {
       this.isModalVisible = true;
     },
@@ -127,8 +131,6 @@ methods: {
     height: 100px;
     // display: flex;
     align-items: center;
-    // padding-left: 40px;
-    // padding-right: 40px;
     min-width: 100%;
     box-shadow: 0px 3px 6px #00000029;
     @media (max-width:600px) {
@@ -139,11 +141,6 @@ methods: {
         background: #ffffff7e;
         transform: translate3d(0, 0, 0);
         height: 80px;
-        // display: flex;
-        // align-items: center;
-        // padding-left: 40px;
-        // padding-right: 40px;
-        // min-width: 100%;
         box-shadow: 0px 3px 6px #00000029;
             // width: 10%;
             // width: 10%;
@@ -151,7 +148,7 @@ methods: {
         }
         // 
     &-link {
-        padding-left: 45%;
+        padding-left: 42%;
         padding-top: 25px;
         display: flex;
         position: relative;
