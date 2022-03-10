@@ -1,5 +1,4 @@
 <template>
-  <div>
       <div class="header">
           <div class="header-text">
             <h2>We Stitch Designs<br> <span>That Fits You Perfectly...</span></h2>
@@ -8,7 +7,6 @@
               <button @click="openLink('https://www.instagram.com/tailorcatalogue/')">Catalogue</button>
           </div>
       </div>
-  </div>
 </template>
 
 <script>
@@ -26,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 .header {
     height: 100vh;
+    width: 100%;
     background: linear-gradient(to right bottom, rgba(68, 66, 66, 0.26), rgba(102, 91, 91, 0.342)), url("../assets/img/pexels-michael-burrows-7147649.jpg");
     background-size: cover;
     background-position: top;
@@ -33,6 +32,7 @@ export default {
     position: relative;
     @media(max-width: 600px) {
         height: 100vh;
+        width: 100%;
     }
     &-btn {
         text-align: center;
@@ -42,11 +42,13 @@ export default {
             padding: 10px 30px;
             border-radius: 50px;
             border: none;
-            background: #F3E8EB;
-            color: #433E49;
+            background: #c49ea8;
+            color: rgb(247, 239, 239);
             @media(max-width: 600px) {
-                margin: 790px 230px 0px 0px;
+                margin: 600px 200px 0px 0px;
                 border-radius: 5px;
+                // text-align: left;
+                text-align: center;
                 font-weight: bold;
             }
 
@@ -71,10 +73,11 @@ export default {
         @media(max-width: 600px) {
             position: absolute;
             top: 450px;
-            left: 50px;
-            width: 8em;
+            left: 40px;
+            width: 7em;
             font-size: 40px;
         }
+        
 
         span {
             color: #F3E8EB;

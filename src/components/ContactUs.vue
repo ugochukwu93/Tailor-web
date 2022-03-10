@@ -1,5 +1,5 @@
 <template>
-<div>
+
   <div id="contact">
       <div>
           <h2>Contact Us</h2>
@@ -27,7 +27,6 @@
           </div>
       </div>
   </div>
-</div>
 </template>
 
 <script>

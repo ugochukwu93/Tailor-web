@@ -1,5 +1,5 @@
 <template>
-  <div>
+  
       <div class="footer">
         <div>
             <p class="">
@@ -27,7 +27,6 @@
             />
         </div>
       </div>
-  </div>
 </template>
 
 <script>

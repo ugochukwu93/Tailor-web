@@ -1,5 +1,5 @@
 <template>
-  <div>
+  
       <div class="about">
           <div class="about-flex">
             <div v-if="!mobile" class="about-box1"></div>
@@ -14,7 +14,7 @@
           <img class="about-img2" src="../assets/img/serwaaamihere-4-removebg-preview.png" v-else/>
       </div>
       
-  </div>
+  
 </template>
 
 <script>
@@ -52,7 +52,7 @@ export default {
         display: flex;
         @media(max-width: 600px) {
             display: flex;
-            height: 120%;
+            height: 100%;
         }
     }
 
@@ -91,11 +91,12 @@ export default {
     &-img {
         width: 100%;
         height: 270px;
-        padding: 0px 0px;
+        padding: 20px 20px;
         position: absolute;
-        top: 25px;
-        
-        
+        top: 0px;
+        img {
+            box-shadow: 0 0 50px;
+        }
     }   
 
     
@@ -113,9 +114,9 @@ export default {
     line-height: 30px;
     margin-bottom: 200px;
     @media(max-width: 600px) {
-        padding: 60px 5px;
+        padding: 60px 20px;
         position: absolute;
-        top: 265px;
+        top: 215px;
         width: 100%;
         height: 470px;
         left: 0;

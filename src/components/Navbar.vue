@@ -1,5 +1,4 @@
 <template>
-  <div>
       <div class="nav"
       :class="{ 'hidden-navbar': !showHeader }">
           <BookModal 
@@ -24,17 +23,17 @@
         </div>
         <header class="header" v-if="mobileView">
     <nav class="header__nav">
-        <img src="../assets/img/sewing-machine.png" width="50">
+        <img src="../assets/img/sewing-machine.png" width="35">
       <ul class="header__navbar">
         <li class="header__item" style="list-style-type: none;">
           <a href="#" class="header__link">
             <transition name="slide-fade">
               <!-- Header Navigation Menu Icons -->
               <button class="header--button" v-if="show" key="on" @click="show = false">
-                <img src="../assets/img/close.png" width="40"/>
+                <img src="../assets/img/close.png" width="20"/>
               </button>
               <button class="header--button" v-else key="off" @click="show = true">
-                <img src="../assets/img/menu.png" width="60"/>
+                <img src="../assets/img/menu.png" width="30"/>
               </button>
             </transition>
           </a>
@@ -57,7 +56,7 @@
     </nav>
   </header>
       </div>
-  </div>
+
 </template>
 
 <script>
@@ -140,7 +139,7 @@ methods: {
         transition: top 0.3s;
         background: #ffffff7e;
         transform: translate3d(0, 0, 0);
-        height: 80px;
+        height: 60px;
         box-shadow: 0px 3px 6px #00000029;
             // width: 10%;
             // width: 10%;
@@ -148,9 +147,10 @@ methods: {
         }
         // 
     &-link {
-        padding-left: 42%;
+        padding-left: 40%;
         padding-top: 25px;
         display: flex;
+        max-width: 100%;
         position: relative;
         @media (max-width:600px) {
             padding-left: 5%;
@@ -162,7 +162,7 @@ methods: {
 
         img {
             position: absolute;
-            top: 15px;
+            top: 10px;
             left: 100px;
         }
     }
@@ -198,7 +198,7 @@ methods: {
   margin-left: 10px;
   &__nav {
       img {
-          margin-top: 15px;
+          margin-top: 12px;
           margin-left: 0px;
       }
     // position: relative;
@@ -213,7 +213,7 @@ methods: {
   }
 
   &--button {
-    bottom: 10px;
+    bottom: 15px;
     right: 5px;
     position: absolute;
     color: gray;
@@ -232,7 +232,7 @@ methods: {
 
 .dropdown__menu {
   transition: transform 300ms linear;
-  top: 80%;
+  top: 75%;
   right: 0;
   position: absolute;
   z-index: 10;

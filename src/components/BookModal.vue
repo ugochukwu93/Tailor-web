@@ -1,6 +1,5 @@
 <template>
-  <div>
-      <div class="book-modal">
+   <div class="book-modal">
         <div class="book-modal--button">
             <button @click="close">Close</button>
         </div>
@@ -52,7 +51,6 @@
             </div>
         </form>   
       </div>
-  </div>
 </template>
 
 

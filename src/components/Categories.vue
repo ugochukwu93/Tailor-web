@@ -1,7 +1,5 @@
 <template>
-<div>
   <div id="categories">
-    <div>
       <div class="categories" >
         <h2>Categories</h2>
       </div>
@@ -13,8 +11,6 @@
         <div class="item item--5"  data-aos="fade-up" data-aos-duration="1000"><img src="../assets/img/african-print-office-10-removebg-preview.png"/><div><h3>Skirt And Top</h3></div></div>
         <div class="item item--6"  data-aos="fade-up" data-aos-duration="1000"><img src="../assets/img/618253-removebg-preview.png"/><div><h3>Office Gown</h3></div></div>
     </div>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -47,12 +43,12 @@ export default {
   grid-gap: 100px; //combines previous two lines if same
 
    @media (max-width:600px) {  
-      width: 368px; 
+      width: 348px; 
       margin-bottom:20px ; 
       display: block;
       padding-right: 0px;
       padding-left: 0px;
-       margin: 10px 0px 10px 10px;
+      //  margin: 10px 0px 10px 10px;
          
   }
 }
@@ -64,6 +60,10 @@ export default {
   font-family: sans-serif;
   color: #fff;
   position: relative;
+  
+  @media(max-width: 600px) {
+    width: 100%;
+  }
 
   div {
     transform: rotate(270deg);
